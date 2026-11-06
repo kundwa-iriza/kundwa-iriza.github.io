@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kundwa Iriza Celia – Backend Engineer</title>
+<meta name="description" content="Backend engineer in Kigali building APIs, AI data platforms and government systems with Python, FastAPI, Node.js and NestJS.">
+<style>
+:root{
+  --bg:#060B1A; --surface:#0C1530; --ink:#E8EEFF; --muted:#93A1C6; --line:#1B2A54;
+  --neon:#25E8FF; --neon2:#8B6BFF; --tag:#0F2040;
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;background:var(--bg)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(800px 460px at 88% -4%,rgba(139,107,255,.26),transparent 62%),radial-gradient(700px 420px at 0% 0%,rgba(37,232,255,.16),transparent 58%),var(--bg);background-repeat:no-repeat}
+a{color:var(--neon)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--neon);outline-offset:3px;border-radius:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;font-weight:700;line-height:1.2;margin:0}
+
+.hero{padding:76px 0 64px;border-bottom:1px solid transparent;border-image:linear-gradient(90deg,var(--neon),var(--neon2),transparent) 1}
+.hero h1{font-size:clamp(2.5rem,7.5vw,4.2rem);letter-spacing:-.02em;max-width:12ch;color:#fff;
+  text-shadow:0 0 10px rgba(37,232,255,.18)}
+.hero .role{margin:18px 0 0;font-size:1.15rem;color:#CFE0FF;max-width:34em}
+.hero .lede{margin:12px 0 0;color:var(--muted);max-width:36em}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--neon);color:var(--neon);text-decoration:none;font-weight:600;font-size:.95rem;
+  box-shadow:0 0 14px rgba(37,232,255,.3),inset 0 0 10px rgba(37,232,255,.1)}
+.btn.primary{background:var(--neon);color:#03101C;box-shadow:0 0 22px rgba(37,232,255,.55)}
+.btn:hover{box-shadow:0 0 24px rgba(37,232,255,.65),inset 0 0 14px rgba(37,232,255,.2)}
+
+section{padding:56px 0 8px}
+h2{font-size:1.7rem;margin-bottom:24px;color:#fff}
+h2::after{content:"";display:block;width:60px;height:3px;margin-top:10px;border-radius:2px;background:linear-gradient(90deg,var(--neon),var(--neon2));box-shadow:0 0 12px var(--neon)}
+.about p{margin:0 0 12px;max-width:62ch;color:#D5DEF5}
+
+.job{display:grid;grid-template-columns:170px 1fr;gap:6px 28px;padding:20px 0;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:.92rem}
+.job h3{font-size:1.1rem;color:#fff}
+.job .org{color:#B5A8FF;font-weight:500;font-family:system-ui,sans-serif;font-size:1rem}
+.job ul{margin:8px 0 0;padding-left:18px;max-width:62ch}
+.job li{margin:3px 0}
+.job li::marker{color:var(--neon)}
+
+.note{background:var(--surface);border:1px solid rgba(37,232,255,.5);border-radius:12px;padding:16px 18px;margin-bottom:22px;box-shadow:0 0 20px rgba(37,232,255,.16)}
+.note p{margin:0 0 8px}
+.note a.cta{font-weight:600}
+.proj{padding:18px 20px;margin-bottom:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .2s,box-shadow .2s}
+.proj:hover{border-color:var(--neon);box-shadow:0 0 20px rgba(37,232,255,.28)}
+.proj h3{font-size:1.1rem;margin-bottom:4px;color:#fff}
+.proj p{margin:4px 0 12px;max-width:62ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{border:1px solid rgba(37,232,255,.45);color:#BFF6FF;background:var(--tag);border-radius:999px;padding:2px 11px;font-size:.85rem}
+.priv{color:var(--muted);font-size:.88rem;margin-top:10px}
+
+dl.skills{display:grid;grid-template-columns:150px 1fr;gap:10px 28px;margin:0}
+dl.skills dt{font-weight:600;color:var(--neon)}
+dl.skills dd{margin:0}
+
+.edu{display:grid;grid-template-columns:170px 1fr;gap:4px 28px;padding:14px 0;border-top:1px solid var(--line)}
+.edu:first-of-type{border-top:0;padding-top:0}
+.edu h3{color:#fff}
+
+footer{margin-top:56px;padding:40px 0 48px;color:#CFE0FF;border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,var(--neon2),var(--neon)) 1;background:linear-gradient(180deg,rgba(37,232,255,.06),transparent)}
+footer h2{margin-bottom:14px}
+footer p{margin:6px 0}
+
+@media (max-width:620px){
+  .job,.edu{grid-template-columns:1fr}
+  dl.skills{grid-template-columns:1fr;gap:2px}
+  dl.skills dd{margin-bottom:10px}
+  .hero{padding:52px 0 48px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.proj{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Kundwa Iriza Celia</h1>
+    <p class="role">Backend engineer building APIs, AI data platforms and government systems in Kigali, Rwanda.</p>
+    <p class="lede">Python, FastAPI, Node.js, NestJS and PostgreSQL. Fluent in English and French.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:kundwairiza@gmail.com">Email me</a>
+      <a class="btn" href="tel:+250791570318">+250 791 570 318</a>
+      <a class="btn" href="https://thecn.com/KI276" rel="noopener">Profile on TheCN</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="about" aria-labelledby="about">
+  <h2 id="about">About</h2>
+  <p>I’m a backend engineer with more than three years of experience building scalable APIs, AI data platforms and distributed systems. I’ve delivered work for government ministries, AI training pipelines and business platforms, both remotely and on-site.</p>
+</section>
+
+<section aria-labelledby="exp">
+  <h2 id="exp">Experience</h2>
+
+  <div class="job">
+    <div class="when">January 2025 to present<br>On-site, part-time</div>
+    <div>
+      <h3>Backend Engineer &amp; Consultant <span class="org">at Yali Labs</span></h3>
+      <ul>
+        <li>Develop FastAPI backends and PostgreSQL data models for AI data collection platforms.</li>
+        <li>Build APIs for Kinyarwanda dataset processing and AI training pipelines.</li>
+        <li>On the Alta project, worked as a recorder and data collector: recorded voice and text prompts using code-switching between Kinyarwanda, English and French, and reviewed written content.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Remote</div>
+    <div>
+      <h3>Writer, Odin project <span class="org">at Mercor</span></h3>
+      <ul><li>Worked as a writer on the Odin project through the Mercor platform.</li></ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">August 2025 to February 2026<br>On-site</div>
+    <div>
+      <h3>Software Developer Intern <span class="org">at RISA</span></h3>
+      <ul>
+        <li>Worked on backend systems in Java and the Joget low-code platform for government digital systems.</li>
+        <li>Supported system integration and workflow automation tools.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">August 2025 to February 2026<br>Remote</div>
+    <div>
+      <h3>Software Developer Intern <span class="org">at MINECOFIN</span></h3>
+      <ul>
+        <li>Built modules for the monthly reporting and submission platform with TypeScript and NestJS.</li>
+        <li>Designed PostgreSQL schemas and integrated REST APIs for financial data workflows.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">January to March 2026<br>On-site</div>
+    <div>
+      <h3>Backend Developer Intern <span class="org">at Ministry of Youth (MOYA)</span></h3>
+      <ul>
+        <li>Built backend modules and RESTful APIs for a youth center management system with Node.js and TypeScript.</li>
+        <li>Worked with frontend developers on system design and integration.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2022 to 2025<br>Remote</div>
+    <div>
+      <h3>Backend Developer, TopStrat <span class="org">at Top Skills Consult</span></h3>
+      <ul>
+        <li>Built the backend of a strategic planning platform for SMEs and enterprises.</li>
+        <li>Integrated AI-based features and subscription payments in a Dockerized, GitHub-based workflow.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">2023 to 2025<br>Remote</div>
+    <div>
+      <h3>Freelance Backend Developer</h3>
+      <ul>
+        <li>Built authentication systems, business logic and REST APIs with Node.js, NestJS, Express.js and Python for multiple clients.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="work">
+  <h2 id="work">Selected work</h2>
+  <div class="note">
+    <p>Most of my repositories are private because they belong to clients and government teams. I’m happy to walk through the code or share samples on request.</p>
+    <a class="cta" href="mailto:kundwairiza@gmail.com?subject=Code%20sample%20request">Request a code sample</a>
+  </div>
+
+  <div class="proj">
+    <h3>Foundry, AI data collection platform</h3>
+    <p>Backend for collecting and annotating Kinyarwanda AI training data, with APIs and pipelines for structured dataset management.</p>
+    <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Python</li></ul>
+    <div class="priv">Private repository. Code available on request.</div>
+  </div>
+
+  <div class="proj">
+    <h3>TopStrat, business strategy platform</h3>
+    <p>Full backend architecture for business planning with AI features, plus subscription management and payment integrations.</p>
+    <ul class="tags"><li>Node.js</li><li>Express.js</li><li>Docker</li></ul>
+    <div class="priv">Private repository. Code available on request.</div>
+  </div>
+
+  <div class="proj">
+    <h3>MINECOFIN reporting system</h3>
+    <p>Backend integration, PostgreSQL schema design and workflow automation for a government financial reporting platform.</p>
+    <ul class="tags"><li>NestJS</li><li>TypeScript</li><li>PostgreSQL</li></ul>
+  </div>
+
+  <div class="proj">
+    <h3>MOYA youth center system</h3>
+    <p>Backend modules and RESTful APIs for managing youth centers, built alongside the frontend team.</p>
+    <ul class="tags"><li>Node.js</li><li>TypeScript</li><li>PostgreSQL</li></ul>
+  </div>
+</section>
+
+<section aria-labelledby="skills">
+  <h2 id="skills">Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>Python, JavaScript, TypeScript, Java, C++, Swift</dd>
+    <dt>Backend</dt><dd>FastAPI, Node.js, NestJS, Express.js, Spring Boot</dd>
+    <dt>Frontend</dt><dd>React.js, Next.js, AngularJS, Redux</dd>
+    <dt>Databases</dt><dd>PostgreSQL, Redis</dd>
+    <dt>Queues</dt><dd>BullMQ, Redis-based task queues</dd>
+    <dt>Auth and ERP</dt><dd>OIDC, PKCE, ERPNext</dd>
+    <dt>Tools</dt><dd>Docker, GitHub, REST APIs, Microservices, Jira</dd>
+  </dl>
+</section>
+
+<section aria-labelledby="edu">
+  <h2 id="edu">Education</h2>
+  <div class="edu">
+    <div class="when">2022 to 2025</div>
+    <div><h3>Rwanda Coding Academy</h3>Advanced Level, Software Programming and Embedded Systems</div>
+  </div>
+  <div class="edu">
+    <div class="when">2019 to 2022</div>
+    <div><h3>Lycée Notre Dame de Cîteaux</h3>Ordinary Level</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>I’m open to backend and AI data platform roles.</p>
+    <p><a href="mailto:kundwairiza@gmail.com">kundwairiza@gmail.com</a><br><a href="tel:+250791570318">+250 791 570 318</a><br>Kigali, Rwanda</p>
+  </div>
+</footer>
+
+</body>
+</html>
